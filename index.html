@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Business Sales Analytics Dashboard</title>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<style>
+
+body{
+    margin:0;
+    font-family:Arial, sans-serif;
+    background:#f4f6f9;
+}
+
+.sidebar{
+    position:fixed;
+    left:0;
+    top:0;
+    width:250px;
+    height:100%;
+    background:#1e293b;
+    overflow-y:auto;
+}
+
+.sidebar h2{
+    color:white;
+    text-align:center;
+    padding:20px 0;
+}
+
+.sidebar a{
+    display:block;
+    color:white;
+    padding:15px 20px;
+    text-decoration:none;
+}
+
+.sidebar a:hover{
+    background:#2563eb;
+}
+
+.main{
+    margin-left:250px;
+    padding:20px;
+}
+
+.section{
+    background:white;
+    padding:20px;
+    border-radius:10px;
+    margin-bottom:20px;
+    box-shadow:0 2px 10px rgba(0,0,0,0.1);
+}
+
+.cards{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:20px;
+}
+
+.card{
+    background:#2563eb;
+    color:white;
+    padding:20px;
+    border-radius:10px;
+    text-align:center;
+}
+
+.card h2{
+    margin:10px 0;
+}
+
+canvas{
+    max-height:400px;
+}
+
+table{
+    width:100%;
+    border-collapse:collapse;
+}
+
+th,td{
+    border:1px solid #ddd;
+    padding:10px;
+    text-align:center;
+}
+
+th{
+    background:#2563eb;
+    color:white;
+}
+
+@media(max-width:768px){
+    .sidebar{
+        position:relative;
+        width:100%;
+        height:auto;
+    }
+
+    .main{
+        margin-left:0;
+    }
+}
+
+</style>
+</head>
+<body>
+
+<div class="sidebar">
+    <h2>Sales BI</h2>
+
+    <a href="#home">🏠 Home</a>
+    <a href="#overview">📊 Overview</a>
+    <a href="#charts">📈 Charts</a>
+    <a href="#comparison">⚖ Comparison</a>
+    <a href="#insights">💡 Insights</a>
+    <a href="#recommendations">🎯 Recommendations</a>
+    <a href="#dataset">ℹ Dataset</a>
+</div>
+
+<div class="main">
+
+<section id="home" class="section">
+    <h1>Business Sales Performance Analytics Dashboard</h1>
+    <p>
+        This dashboard provides a comprehensive view of business sales
+        performance using interactive visualizations and analytics.
+    </p>
+</section>
+
+<section id="overview" class="section">
+<h2>Executive Overview</h2>
+
+<div class="cards">
+
+<div class="card">
+<h3>Total Revenue</h3>
+<h2>₹5.49M</h2>
+</div>
+
+<div class="card">
+<h3>Total Orders</h3>
+<h2>1000</h2>
+</div>
+
+<div class="card">
+<h3>Units Sold</h3>
+<h2>5421</h2>
+</div>
+
+<div class="card">
+<h3>Average Order Value</h3>
+<h2>₹5488</h2>
+</div>
+
+<div class="card">
+<h3>Best Product</h3>
+<h2>Laptop</h2>
+</div>
+
+<div class="card">
+<h3>Best Region</h3>
+<h2>North</h2>
+</div>
+
+</div>
+</section>
+
+<section id="charts" class="section">
+<h2>Analytics Charts</h2>
+
+<h3>1. Monthly Revenue Trend</h3>
+<canvas id="chart1"></canvas>
+
+<h3>2. Monthly Orders Trend</h3>
+<canvas id="chart2"></canvas>
+
+<h3>3. Revenue by Region</h3>
+<canvas id="chart3"></canvas>
+
+<h3>4. Revenue by Category</h3>
+<canvas id="chart4"></canvas>
+
+<h3>5. Revenue by Product</h3>
+<canvas id="chart5"></canvas>
+
+<h3>6. Units Sold by Product</h3>
+<canvas id="chart6"></canvas>
+
+<h3>7. Region Order Distribution</h3>
+<canvas id="chart7"></canvas>
+
+<h3>8. Product Comparison</h3>
+<canvas id="chart8"></canvas>
+
+<h3>9. Monthly Growth Percentage</h3>
+<canvas id="chart9"></canvas>
+
+<h3>10. Revenue vs Units Sold</h3>
+<canvas id="chart10"></canvas>
+
+</section>
+
+<section id="comparison" class="section">
+<h2>Comparison Center</h2>
+
+<ul>
+<li>North region generated the highest revenue.</li>
+<li>Laptops outperformed all products.</li>
+<li>Electronics contributed more revenue than accessories.</li>
+<li>Revenue growth accelerated after April.</li>
+</ul>
+
+</section>
+
+<section id="insights" class="section">
+
+<h2>Business Insights</h2>
+
+<ul>
+<li>North region contributed 31% of total revenue.</li>
+<li>Laptops generated 26% of business revenue.</li>
+<li>Sales growth remained positive across all months.</li>
+<li>Accessories have opportunity for expansion.</li>
+<li>Q2 outperformed Q1 significantly.</li>
+</ul>
+
+</section>
+
+<section id="recommendations" class="section">
+
+<h2>Recommendations</h2>
+
+<ul>
+<li>Increase inventory for laptops and phones.</li>
+<li>Expand marketing efforts in South region.</li>
+<li>Launch promotional campaigns for accessories.</li>
+<li>Focus on retaining high-value customers.</li>
+</ul>
+
+</section>
+
+<section id="dataset" class="section">
+
+<h2>About Dataset</h2>
+
+<p>
+The dataset contains:
+</p>
+
+<ul>
+<li>1000 sales records</li>
+<li>6 products</li>
+<li>4 regions</li>
+<li>2 categories</li>
+<li>Generated for internship analytics demonstration</li>
+</ul>
+
+</section>
+
+</div>
+
+<script>
+
+new Chart(document.getElementById('chart1'),{
+type:'line',
+data:{
+labels:['Jan','Feb','Mar','Apr','May','Jun'],
+datasets:[{
+label:'Revenue',
+data:[650000,780000,820000,910000,1080000,1247650]
+}]
+}
+});
+
+new Chart(document.getElementById('chart2'),{
+type:'line',
+data:{
+labels:['Jan','Feb','Mar','Apr','May','Jun'],
+datasets:[{
+label:'Orders',
+data:[120,140,155,170,190,225]
+}]
+}
+});
+
+new Chart(document.getElementById('chart3'),{
+type:'bar',
+data:{
+labels:['North','South','East','West'],
+datasets:[{
+label:'Revenue',
+data:[1700000,1350000,1250000,1187650]
+}]
+}
+});
+
+new Chart(document.getElementById('chart4'),{
+type:'pie',
+data:{
+labels:['Electronics','Accessories'],
+datasets:[{
+data:[68,32]
+}]
+}
+});
+
+new Chart(document.getElementById('chart5'),{
+type:'bar',
+data:{
+labels:['Laptop','Phone','Tablet','Monitor','Keyboard'],
+datasets:[{
+label:'Revenue',
+data:[1450000,1200000,950000,820000,620000]
+}]
+}
+});
+
+new Chart(document.getElementById('chart6'),{
+type:'bar',
+data:{
+labels:['Laptop','Phone','Tablet','Monitor','Keyboard'],
+datasets:[{
+label:'Units Sold',
+data:[920,1100,850,720,980]
+}]
+}
+});
+
+new Chart(document.getElementById('chart7'),{
+type:'doughnut',
+data:{
+labels:['North','South','East','West'],
+datasets:[{
+data:[31,25,23,21]
+}]
+}
+});
+
+new Chart(document.getElementById('chart8'),{
+type:'radar',
+data:{
+labels:['Laptop','Phone','Tablet','Monitor','Keyboard'],
+datasets:[{
+label:'Performance Score',
+data:[95,88,75,72,65]
+}]
+}
+});
+
+new Chart(document.getElementById('chart9'),{
+type:'line',
+data:{
+labels:['Jan','Feb','Mar','Apr','May','Jun'],
+datasets:[{
+label:'Growth %',
+data:[5,8,6,10,14,18]
+}]
+}
+});
+
+new Chart(document.getElementById('chart10'),{
+type:'scatter',
+data:{
+datasets:[{
+label:'Revenue vs Units',
+data:[
+{x:920,y:1450000},
+{x:1100,y:1200000},
+{x:850,y:950000},
+{x:720,y:820000},
+{x:980,y:620000}
+]
+}]
+}
+});
+
+</script>
+
+</body>
+</html>
